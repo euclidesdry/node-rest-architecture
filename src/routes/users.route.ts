@@ -7,6 +7,8 @@ let users = [
   { id: 1, name: "Euclides" },
   { id: 2, name: "John Doe" },
   { id: 3, name: "Talitah" },
+  { id: 4, name: "Neves" },
+  { id: 5, name: "Carlos" },
 ];
 
 type GetUserType = {
