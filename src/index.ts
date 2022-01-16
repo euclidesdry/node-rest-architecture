@@ -13,5 +13,5 @@ app.get("/status", (req: Request, res: Response, next: NextFunction) => {
 });
 
 app.listen(4060, () => {
-  console.log("Starting Node Server by Euclides DryC`s Machine 🥕");
+  console.log("Starting Node Server by Euclides DryC`s Machine 🥕!");
 });
