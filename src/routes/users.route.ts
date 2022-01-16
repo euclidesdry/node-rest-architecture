@@ -1,4 +1,5 @@
 import { Router, Request, Response, NextFunction as Next } from "express";
+import statusCode from "http-status-codes";
 
 const usersRoute = Router();
 
@@ -14,7 +15,7 @@ type GetUserType = {
 
 // GET /users
 usersRoute.get("/users", (req: Request, res: Response, next: Next) => {
-  res.status(200).send({ users });
+  res.status(statusCode.OK).send({ users });
 });
 
 // GET /users/:userId
@@ -22,7 +23,7 @@ usersRoute.get("/users/:userId", (req: Request<GetUserType>, res: Response, next
     const { userId } = req.params;
     const user = users.filter((user) => user.id === parseInt(userId));
 
-    res.status(200).send({ user });
+    res.status(statusCode.OK).send({ user });
   }
 );
 
