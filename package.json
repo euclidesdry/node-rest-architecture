@@ -1,5 +1,5 @@
 {
-  "name": "rest-archtecture",
+  "name": "rest-architecture",
   "version": "0.0.1",
   "description": "NodeJS Micro Services",
   "main": "./dist/index.js",

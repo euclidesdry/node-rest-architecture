@@ -49,7 +49,24 @@ usersRoute.post(
 );
 
 // PUT /users/:userId
-// PUT /users/:userId
+usersRoute.put(
+  "/users/:userId",
+  (req: Request<GetUserType>, res: Response, next: Next) => {
+    const { userId } = req.params;
+    const name = req.body?.name;
+    let changedUser = {};
+
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].id.toString().includes(userId)) {
+        users[i].name = name;
+        changedUser = users[i];
+      }
+    }
+
+    res.status(statusCode.OK).send({ changedUser });
+  }
+);
+
 // DELETE /users/:userId
 
 export default usersRoute;
