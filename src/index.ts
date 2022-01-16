@@ -1,5 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 
+import userRoutes from './routes/users.route';
+
 const app = express();
 
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
@@ -11,6 +13,8 @@ app.get("/", (req: Request, res: Response, next: NextFunction) => {
 app.get("/status", (req: Request, res: Response, next: NextFunction) => {
   res.status(200).send({ status: "OK" });
 });
+
+app.use(userRoutes);
 
 app.listen(4060, () => {
   console.log("Starting Node Server by Euclides DryC`s Machine 🥕!");
