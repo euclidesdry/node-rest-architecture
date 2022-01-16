@@ -69,4 +69,20 @@ usersRoute.put(
 
 // DELETE /users/:userId
 
+usersRoute.delete(
+  "/users/:userId",
+  (req: Request<GetUserType>, res: Response, next: Next) => {
+    const { userId } = req.params;
+    let removedUser = {};
+
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].id && users[i].id.toString().includes(userId)) {
+        removedUser = users.splice(i, 1);
+      }
+    }
+
+    res.status(statusCode.OK).send({ removedUser });
+  }
+);
+
 export default usersRoute;
